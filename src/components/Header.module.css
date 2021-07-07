@@ -1,17 +1,36 @@
-#navbar-brand{
+#navbar-brand {
   margin-right: 40px;
   font-size: 35px;
   font-weight: bold;
 
 }
-#navbar{
-background-attachment: fixed;
+
+#navbar {
+  height: 75px;
+
+
+  @media (min-width: 990px) {
+    display: none;
+  }
+
+  /* background-attachment: fixed;
 background-color: chocolate;
 color: aliceblue;
   height: 50px;
 
-  /* position: fixed; */
+  /* position: fixed; 
   top: 0;
-  width: 100%;
+  width: 100%; */
 
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+
+nav ul {
+  font-size: 1.3rem;
 }

@@ -4,9 +4,9 @@ import Event from "../EventsData/Event"
 
 const SavedEvents = () => {
     return (
-        <div>
-                <h1>Saved Events</h1>
-                <Event/>
+        <div className="container">
+            <h1 style={{ color: "#c5c5c5" }} >Saved Events</h1>
+            <Event />
         </div>
     )
 }

@@ -1,12 +1,22 @@
 import React from 'react'
 import Card from '../ui/Card'
+import './AddNewEvent.module.css'
 
 const AddNewEvent = () => {
-    return (
-        <Card>
-            <h1>Add New Event</h1>
-            <form>
+    const display = () => <p className="alert alert-success" role="alert">Event Successfull Added</p>
 
+
+    return (
+    <div className="container">
+    <h1>Add New Event</h1>
+        <Card>
+            
+            <form onSubmit={display}>
+
+            <div className="form-group">
+                   
+                </div> 
+                
                 <div className="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Event Name"/>
@@ -46,9 +56,11 @@ const AddNewEvent = () => {
                     <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                     <label className="form-check-label" for="exampleCheck1">Acept term s and conditions</label>
                 </div>
+                <br/>       
                 <button type="submit" className="btn btn-primary">Add Event</button>
             </form>
         </Card>
+        </div>
     )
 }
 

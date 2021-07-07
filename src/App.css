@@ -2,18 +2,18 @@
   text-align: center;
 }
 
-.body{
-  margin-top: 20px;
- padding: 50px;
+.body {
+  /* margin-top: 20px; */
+  padding: 50px;
   padding-top: 0px;
-  background-color: #fff;
+  background-color: whitesmoke;
 }
 
-.details{
+.details {
   text-transform: uppercase;
   text-decoration-color: aqua;
 }
 
-button{
+button {
   font-size: smaller;
 }
