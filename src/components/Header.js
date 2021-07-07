@@ -40,9 +40,9 @@ const Header = () => {
                     <Link className="nav-link" to='/accomplished-events'>Accompanished Events</Link>
                 </li>
                
-                <ul className="nav  justify-content-end ">
+                
                
-                <li className="nav-item dropdown">
+                <li className="nav-item dropdown btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
                 <Link className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</Link>
                     <div className="dropdown-menu">
                     <Link className="dropdown-item"  to='/sign-in'>Sign In</Link>
@@ -51,7 +51,7 @@ const Header = () => {
                     <button className="dropdown-item" onClick={deleteHandler} >Log out</button>
                     </div>
                 </li>
-            </ul>
+            
 
         </ul>
         {modalIsOpen && (
