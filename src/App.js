@@ -1,34 +1,27 @@
 import './App.css';
 import { BrowserRouter as Route, Switch } from 'react-router-dom'
-import { useState } from 'react';
 import Header from './components/Header'
+
+
+import ErrorPages from './pages/ErrorPage'
 import AccomplishedEvents from './pages/AccomplishedEvents'
 import AddNewEvent from './pages/AddNewEvent'
 import AllEvents from './pages/AllEvents'
 import SavedEvents from './pages/SavedEvents'
 import TodaysEvents from './pages/TodayEvents'
+import  Dashboard from './pages/Dashboard'
+import  DashboardGuest from './pages/DashboardGuest'
 import Footer from './components/Footer';
 /* Account Switch */
 import SignIn from './account/SignIn'
 import SignOut from './account/SignOut'
 import SignUp from './account/SignUp'
-import Backdrop from './components/Backdrop';
 
 
 
 
 
 function App() {
-  
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  function deleteHandler() {
-    setModalIsOpen(true);
-  }
-
-  function closeModalHandler() {
-    setModalIsOpen(false);
-  }
 
   return (
     <div>
@@ -36,7 +29,15 @@ function App() {
       <div className='body,container'>
 
         <Switch>
-          <Route path='/all-events' exact>
+        
+          {/* Main pages */}
+
+          <Route path='/' exact>
+            <DashboardGuest />
+          </Route>
+          
+
+          <Route path='/all-events'>
             <AllEvents />
           </Route>
 
@@ -68,10 +69,29 @@ function App() {
            <Route path='/sign-out'>
            <SignOut/>
           </Route>
+
+        {/* Dashboard Switch */}
+        <Route path='/dashboard'>
+                    <Dashboard/>
+          </Route>
+          <Route path='/dashboard-guest'>
+         <DashboardGuest/>
+          </Route>
+
+
+            {/* Error pages */}
+            <Route path='*'>
+            <ErrorPages />
+          </Route> 
+           
+
+
           <div className='actions'>
-        <button className='btn btn-secondary' onClick={deleteHandler}>
+        <button className='btn btn-secondary'>
           Delete
         </button>
+
+        <DashboardGuest/>
       </div>
           
 
@@ -86,12 +106,6 @@ function App() {
         </div>
 
       <Footer />
-
-      {modalIsOpen && (
-        <SignOut onCancel={closeModalHandler} onConfirm={closeModalHandler} />
-      )}
-      {modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
-    
     </div>
   );
 }
