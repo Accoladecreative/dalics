@@ -10,9 +10,9 @@ const Header = () => {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    function deleteHandler() {
-      setModalIsOpen(true);
-    }
+//     function deleteHandler() {
+//       setModalIsOpen(true);
+//     }
   
     function closeModalHandler() {
       setModalIsOpen(false);
