@@ -1,6 +1,6 @@
 
-import Backdrop from './Backdrop';
-import SignOut from '../account/SignOut'
+import Backdrop from './Dialog/Backdrop';
+import SignOut from './Dialog/SignOut'
 import { useState } from 'react';
 
 import Style from './Header.module.css';
@@ -17,11 +17,18 @@ const Header = () => {
     function closeModalHandler() {
       setModalIsOpen(false);
     }    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-info justify-content-center" id={Style.navbar}>
+        <nav className="navbar navbar-expand-lg navbar-collapse-md navbar-light bg-info justify-content-center sticky-top" id={Style.navbar}>
                 <div className="container">
 
-            <Link className="navbar-brand " to="/all-events"><span className={Style.logo}>EventKeeper</span></Link>
+            <Link className="navbar-brand " to="/dashboard"><span className={Style.logo}>EventKeeper</span></Link>
 
+
+            {/* //responsivity: toggle btn */}
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item light">
                     <Link className="nav-link" to='/all-events'>All Events <span className="sr-only">(current)</span></Link>
@@ -41,22 +48,25 @@ const Header = () => {
                 </li>
                
                 
-               
-                <li className="nav-item dropdown btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+                <div className="dropdown-divider"></div>
+                <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</Link>
                     <div className="dropdown-menu">
                     <Link className="dropdown-item"  to='/sign-in'>Sign In</Link>
                     <Link className="dropdown-item"  to='/sign-up' >Sign Up</Link>
                     <div className="dropdown-divider"></div>
-                    <button className="dropdown-item" onClick={deleteHandler} >Log out</button>
+                    <Link  to='/sign-out' className="dropdown-item" >Log out</Link>
                     </div>
                 </li>
+                  
             
 
         </ul>
-        {modalIsOpen && (
-        <SignOut onCancel={closeModalHandler} onConfirm={closeModalHandler} />
-      )}
+                        {/* <button className="dropdown-item" onClick={deleteHandler} >Log out</button> */}
+
+        </div>
+        {modalIsOpen && <SignOut onCancel={closeModalHandler} onConfirm={closeModalHandler} />
+      }
       {modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
 </div>
         </nav>

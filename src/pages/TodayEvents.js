@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import Events from "../EventsData/Event"
+import Layout from "../ui/Layout";
 
 
 const TodayEvents = () => {
@@ -10,22 +11,28 @@ const TodayEvents = () => {
 
     // const setEvent = date == today ? <p>Today's Event  {today}</p> : <p>This Event is not for today  {today}</p>
 
+    const [num, addNum] = useState(0);
 
-    let num = 0
 
     function handleIncrease() {
-        this.setState({ num: num + 1 });
+        addNum(num+1)
+    } function handleDecrease() {
+        addNum(num-1)
+    }function handleReset() {
+        addNum(0)
     }
 
 
     return (
-        <div className="container">
+        <Layout>
             <h1>Today's Events</h1>
-            <p className="badge badge-primary mg-5">{num}</p>
-            <button className='btn btn-primary' onClick={handleIncrease}>Add</button>
-            <Events />
+            <p className="badge badge-primary mg-5">{num}</p><br/>
+            <button className='btn btn-success' onClick={handleIncrease}>Add</button>
+            <button className='btn btn-dark' onClick={handleReset}>Reset</button>
+            <button className='btn btn-warning' onClick={handleDecrease}>Decrease</button>
+         <Events />
 
-        </div>
+        </Layout>
     )
 }
 

@@ -1,16 +1,16 @@
 import React from 'react'
-
 import Events from "../EventsData/Event"
+import Layout from '../ui/Layout'
 
 const AccomplishedEvents = () => {
     return (
-        <div className="container">
+        <Layout>
                             <h1>Accomplished Events</h1>
                           
                             <Events/>
 
 
-        </div>
+        </Layout>
     )
 }
 

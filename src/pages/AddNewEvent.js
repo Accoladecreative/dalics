@@ -1,13 +1,14 @@
 import React from 'react'
 import Card from '../ui/Card'
 import './AddNewEvent.module.css'
+import Layout from '../ui/Layout'
 
 const AddNewEvent = () => {
     const display = () => <p className="alert alert-success" role="alert">Event Successfull Added</p>
 
 
     return (
-    <div className="container">
+    <Layout>
     <h1>Add New Event</h1>
         <Card>
             
@@ -19,18 +20,24 @@ const AddNewEvent = () => {
                 
                 <div className="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Event Name"/>
-                    <small id="emailHelp" className="form-text text-muted">This will be peculir to every events</small>
+                    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Event Name" required/>
+                    <small id="emailHelp" className="form-text text-muted">This will be peculiar to every events</small>
                 </div>
  
                 <div className="form-group">
                     <label for="details">Details</label>
-                    <textarea className="form-control" id="details" placeholder="Details" rows="3"></textarea>
+                    <textarea className="form-control" id="details" placeholder="Details" rows="3" required></textarea>
                 </div>
 
-                <div className="form-group">
-                    <label for="exampleInputPassword1">Time</label>
-                    <input type="time" className="form-control" id="exampleInputPassword1" placeholder="Time"/>
+                <div className="form-row">
+                    <div className="form-group col-6">
+                        <label for="startTime">Start Time</label>
+                        <input type="time" className="form-control" id="startTime" placeholder="Time" required/>
+                    </div>
+                    <div className="form-group col-6">
+                        <label for="endTime">End Time</label>
+                        <input type="time" className="form-control" id="endTime" placeholder="Time"/>
+                    </div>
                 </div>
                
                 {/* <div class="form-row">
@@ -53,14 +60,14 @@ const AddNewEvent = () => {
                 </div>*/}
 
                  <div className="form-check">
-                    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                    <label className="form-check-label" for="exampleCheck1">Acept term s and conditions</label>
+                    <input type="checkbox" className="form-check-input" id="exampleCheck1" required/>
+                    <label className="form-check-label" for="exampleCheck1">Accept terms and conditions</label>
                 </div>
                 <br/>       
                 <button type="submit" className="btn btn-primary">Add Event</button>
             </form>
         </Card>
-        </div>
+        </Layout>
     )
 }
 

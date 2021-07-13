@@ -12,9 +12,10 @@ import TodaysEvents from './pages/TodayEvents'
 import  Dashboard from './pages/Dashboard'
 import  DashboardGuest from './pages/DashboardGuest'
 import Footer from './components/Footer';
+import Backdrop from './components/Dialog/Backdrop';
 /* Account Switch */
 import SignIn from './account/SignIn'
-import SignOut from './account/SignOut'
+import SignOut from './components/Dialog/SignOut'
 import SignUp from './account/SignUp'
 
 
@@ -78,11 +79,15 @@ function App() {
          <DashboardGuest/>
           </Route>
 
-
+{/* Error pages */}
+            <Route path='/back'>
+            <Backdrop />
+          </Route> 
             {/* Error pages */}
             <Route path='*'>
             <ErrorPages />
-          </Route> 
+          </Route>  
+           
            
 
 
