@@ -1,0 +1,16 @@
+‎22 ‎May ‎2021
+transfering files from one fragments to the other using safe args
+
+mvvm
+
+Retrofit --- Done
+
+
+05 June 20201
+Using diffUtill and dataBinding with recycler view
+
+
+july 202
+Destructuring Objects
+
+Asynchronous JavaScript

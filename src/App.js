@@ -26,8 +26,9 @@ function App() {
 
   return (
     <div>
+    
       <Header />
-      <div className='body,container'>
+      <div className='body'>
 
         <Switch>
         
